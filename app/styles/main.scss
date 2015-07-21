@@ -88,6 +88,13 @@ p {
     }
 }
 
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 // ***************************************************************************
 // STRUCTURE COMPONENTS
 // ***************************************************************************
@@ -102,6 +109,23 @@ p {
     }
 }
 
+.download {
+    margin: 70px auto;
+    text-align: center;
+}
+
+.button {
+    display: inline;
+    color: white;
+    padding: 15px 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+    &:hover {
+        color: black;
+        background-color: white;
+    }
+}
+
 .player {
     width: 460px;
     margin: 70px auto;
@@ -109,7 +133,30 @@ p {
 
 @media (max-width: 768px) {
     .player {
-        width: 340px;
+        width: 280px;
+    }
+}
+
+.social-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    i {
+        font-size: 40px;
+        padding: 0 20px 20px 20px;
+        color: white;
+    }
+    .fa-twitter:hover {
+        color: #55acee;
+    }
+    .fa-facebook:hover {
+        color: #3b5998;
+    }
+    .fa-soundcloud:hover {
+        color: #FD6A20;
+    }
+    .fa-instagram:hover {
+        color: #a0775c;
     }
 }
 
@@ -152,15 +199,20 @@ p {
         cursor: pointer;
         a {
             display: block;
+            text-decoration: none;
             text-indent: -3.3ex;
             padding: 0px 0px 0px 20px;
             &:hover {
                 text-decoration: none;
                 color: white;
             }
+            &:focus {
+                text-decoration: none;
+                color: white;
+            }
         }
         .playing {
-            color: #aaa;
+            color: #000000;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
             a {
                 color: #000;
@@ -188,14 +240,17 @@ li.playing:before {
 @media (max-width: 768px) {
 
     .audiojs {
-        width: 340px;
+        width: 280px;
         .time {
             display: none;
+        }
+        .scrubber {
+            width: 220px;
         }
     }
 
     ol {
-        width: 340px;
+        width: 280px;
     }
 
 }
