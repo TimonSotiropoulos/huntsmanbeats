@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>huntsmanbeats</title>
+    <title>Huntsman</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -28,10 +28,21 @@
 
         <div class="title">
             <h1>Huntsman</h1>
+            <h2>More Fun Then Wearing A Hat</h2>
+        </div>
+
+        <div class="player">
+            <audio preload></audio>
+            <ol>
+              <li><a href="#" data-src="./files/wwrd_m2.mp3">Sit Back Down</a></li>
+              <li><a href="#" data-src="http://kolber.github.io/audiojs/demos/mp3/02-juicy-r.mp3">3 Triple 0</a></li>
+              <li><a href="#" data-src="http://kolber.github.io/audiojs/demos/mp3/03-its-all-about-the-crystalizabeths.mp3">Four Walls</a></li>
+              <li><a href="#" data-src="http://kolber.github.io/audiojs/demos/mp3/04-islands-is-the-limit.mp3">Bottoms Up</a></li>
+            </ol>
         </div>
 
       <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <p>&copy; Huntsman 2015</p>
       </div>
     </div>
 
@@ -69,5 +80,35 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <!-- AUDIO PLAYER SCRIPTS -->
+    <script src="scripts/audiojs/audio.min.js"></script>
+    <script>
+    // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+            trackEnded: function() {
+                var next = $('ol li.playing').next();
+                if (!next.length) next = $('ol li').first();
+                next.addClass('playing').siblings().removeClass('playing');
+                audio.load($('a', next).attr('data-src'));
+                audio.play();
+            }
+        });
+
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+    </script>
+
   </body>
 </html>
