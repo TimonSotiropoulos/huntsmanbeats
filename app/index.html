@@ -34,10 +34,6 @@
             <h2>More Fun Then Wearing A Hat</h2>
         </div>
 
-        <div class="download">
-            <a href=""><div class="button">DOWNLOAD</div></a>
-        </div>
-
         <div class="player">
             <audio preload></audio>
             <ol>
@@ -46,6 +42,12 @@
               <li><a href="#" data-src="http://kolber.github.io/audiojs/demos/mp3/03-its-all-about-the-crystalizabeths.mp3">Four Walls</a></li>
               <li><a href="#" data-src="http://kolber.github.io/audiojs/demos/mp3/04-islands-is-the-limit.mp3">Bottoms Up</a></li>
             </ol>
+        </div>
+
+        <!-- Button trigger modal -->
+        <div class="download">
+            <a href=""><div class="button">DOWNLOAD</div></a>
+            <a href="" data-toggle="modal" data-target="#myModal"><div class="button">PHOTOS</div></a>
         </div>
 
         <div class="social-list">
@@ -57,6 +59,26 @@
 
       <div class="footer">
         <p>&copy; Huntsman 2015</p>
+      </div>
+    </div>
+
+    <!-- PHOTOS POPUP MODAL -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+              <a href="_blank" id="thumb1"><img src="./images/thumbs/huntsman_thumb.jpg"></a>
+              <a><img src="./images/thumbs/huntsman_thumb.jpg"></a>
+              <a><img src="./images/thumbs/huntsman_thumb.jpg"></a>
+          </div>
+        </div>
       </div>
     </div>
 
