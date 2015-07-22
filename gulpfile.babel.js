@@ -92,6 +92,11 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
+gulp.task('files', () => {
+    return gulp.src('app/images/**/*')
+        .pipe(gulp.dest('dist/images'))
+});
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
